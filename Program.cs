@@ -244,6 +244,9 @@ namespace Heist
 
             if (rolodex.Count > 0)
             {
+
+                int totalCut = 0;
+
                 while (true)
                 {
                     Console.WriteLine();
@@ -279,7 +282,7 @@ namespace Heist
                         continue;
                     }
 
-                    if (selectedOperative.PercentageCut > bank.CashOnHand)
+                    if ((totalCut + selectedOperative.PercentageCut) > 100)
                     {
                         Console.WriteLine(
                             $"{selectedOperative.Name} requires a percentage cut of {selectedOperative.PercentageCut}%, which cannot be offered."
@@ -288,6 +291,7 @@ namespace Heist
                     }
 
                     crew.Add(selectedOperative);
+                    totalCut += selectedOperative.PercentageCut;
                     rolodex.RemoveAt(selectedOperativeIndex - 1);
 
                     Console.WriteLine($"{selectedOperative.Name} has been added to the crew.");
