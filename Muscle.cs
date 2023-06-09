@@ -6,10 +6,10 @@ namespace Heist {
         public int SkillLevel { get; set; }
         public int PercentageCut { get; set; }
         public void PerformSkill(Bank bank) {
-            bank.AlarmScore -= SkillLevel;
-            Console.WriteLine($"{Name} is using their muscles to disable the alarm system. Decreased security {SkillLevel} points.");
-            if (bank.AlarmScore <= 0) {
-                Console.WriteLine($"{Name} has disabled the alarm system!");
+            bank.SecurityGuardScore -= SkillLevel;
+            Console.WriteLine($"{Name} is using their muscles to disable the Security Guard. Decreased security {SkillLevel} points.");
+            if (bank.SecurityGuardScore <= 0) {
+                Console.WriteLine($"{Name} has unleashed a can of whoop arse on the Security Guard!");
             }
         }
     }

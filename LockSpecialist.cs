@@ -6,10 +6,10 @@ namespace Heist {
         public int SkillLevel { get; set; }
         public int PercentageCut { get; set; }
         public void PerformSkill(Bank bank) {
-            bank.AlarmScore -= SkillLevel;
-            Console.WriteLine($"{Name} is picking the lock. Decreased security {SkillLevel} points.");
-            if (bank.AlarmScore <= 0) {
-                Console.WriteLine($"{Name} has picked the lock!");
+            bank.VaultScore -= SkillLevel;
+            Console.WriteLine($"{Name} is picking the lock on the vault. Decreased security {SkillLevel} points.");
+            if (bank.VaultScore <= 0) {
+                Console.WriteLine($"{Name} has picked the lock on the vault!");
             }
         }
     }
